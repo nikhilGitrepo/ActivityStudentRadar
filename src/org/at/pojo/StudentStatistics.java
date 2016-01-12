@@ -4,13 +4,26 @@
 package org.at.pojo;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 /**
  * @author Nikhil
  *
  */
-
+@Entity
+@Table(name="StudentStatistics")
+@NamedQueries({
+	@NamedQuery(
+	name = "fetchAllStudentStatistics",
+	query = "from StudentStatistics"
+	)
+})
 public class StudentStatistics implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -20,7 +33,7 @@ public class StudentStatistics implements Serializable{
 	private String subject;
 	private String online_flag;
 	private String enrollment;
-	private BigDecimal rc_final_grade;
+	private double rc_final_grade;
 	private int percentile;
 	private int sat_verbal;
 	private int sat_math;
@@ -29,31 +42,31 @@ public class StudentStatistics implements Serializable{
 	private int rc_gender;
 	private String rc_enrollment_status;
 	private String rc_class_code;
-	private BigDecimal gpa_cumulative;
-	private BigDecimal gpa_semester;
+	private double gpa_cumulative;
+	private double gpa_semester;
 	private String standing;
-	private int rmn_score;
-	private BigDecimal rmn_score_partial;
-	private BigDecimal r_content_read;
+	private double rmn_score;
+	private double rmn_score_partial;
+	private double r_content_read;
 	private String r_assmt_sub;
-	private BigDecimal r_forum_post;
-	private BigDecimal r_forum_read;
-	private BigDecimal r_lessons_view;
-	private BigDecimal r_assmt_take;
-	private BigDecimal r_asn_sub;
-	private BigDecimal r_asn_read;
-	private BigDecimal r_sessions;
+	private double r_forum_post;
+	private double r_forum_read;
+	private double r_lessons_view;
+	private double r_assmt_take;
+	private double r_asn_sub;
+	private double r_asn_read;
+	private double r_sessions;
 	private String academic_risk;
-	private BigDecimal fail_probability;
-	private BigDecimal pass_probability;
+	private double fail_probability;
+	private double pass_probability;
 	private String model_risk_confidence;
 	
 	public StudentStatistics() {
 	}
 
 	public StudentStatistics(String alternative_id, String course_id, String subject, int age, int rc_gender,
-			BigDecimal gpa_cumulative, int rmn_score, BigDecimal r_content_read, BigDecimal r_forum_post,
-			BigDecimal r_asn_sub, BigDecimal r_sessions, String model_risk_confidence) {
+			double gpa_cumulative, double rmn_score, double r_content_read, double r_forum_post,
+			double r_asn_sub, double r_sessions, String model_risk_confidence) {
 
 		this.alternative_id = alternative_id;
 		this.course_id = course_id;
@@ -69,6 +82,8 @@ public class StudentStatistics implements Serializable{
 		this.model_risk_confidence = model_risk_confidence;
 	}
 
+	@Id
+	@Column
 	public String getAlternative_id() {
 		return alternative_id;
 	}
@@ -77,6 +92,7 @@ public class StudentStatistics implements Serializable{
 		this.alternative_id = alternative_id;
 	}
 
+	@Column
 	public String getCourse_id() {
 		return course_id;
 	}
@@ -85,6 +101,7 @@ public class StudentStatistics implements Serializable{
 		this.course_id = course_id;
 	}
 
+	@Column
 	public String getSubject() {
 		return subject;
 	}
@@ -93,6 +110,7 @@ public class StudentStatistics implements Serializable{
 		this.subject = subject;
 	}
 
+	@Column
 	public String getOnline_flag() {
 		return online_flag;
 	}
@@ -101,6 +119,7 @@ public class StudentStatistics implements Serializable{
 		this.online_flag = online_flag;
 	}
 
+	@Column
 	public String getEnrollment() {
 		return enrollment;
 	}
@@ -109,14 +128,16 @@ public class StudentStatistics implements Serializable{
 		this.enrollment = enrollment;
 	}
 
-	public BigDecimal getRc_final_grade() {
+	@Column
+	public double getRc_final_grade() {
 		return rc_final_grade;
 	}
 
-	public void setRc_final_grade(BigDecimal rc_final_grade) {
+	public void setRc_final_grade(double rc_final_grade) {
 		this.rc_final_grade = rc_final_grade;
 	}
 
+	@Column
 	public int getPercentile() {
 		return percentile;
 	}
@@ -125,6 +146,7 @@ public class StudentStatistics implements Serializable{
 		this.percentile = percentile;
 	}
 
+	@Column
 	public int getSat_verbal() {
 		return sat_verbal;
 	}
@@ -133,6 +155,7 @@ public class StudentStatistics implements Serializable{
 		this.sat_verbal = sat_verbal;
 	}
 
+	@Column
 	public int getSat_math() {
 		return sat_math;
 	}
@@ -141,6 +164,7 @@ public class StudentStatistics implements Serializable{
 		this.sat_math = sat_math;
 	}
 
+	@Column
 	public int getAptitude_score() {
 		return aptitude_score;
 	}
@@ -149,6 +173,7 @@ public class StudentStatistics implements Serializable{
 		this.aptitude_score = aptitude_score;
 	}
 
+	@Column
 	public int getAge() {
 		return age;
 	}
@@ -157,6 +182,7 @@ public class StudentStatistics implements Serializable{
 		this.age = age;
 	}
 
+	@Column
 	public int getRc_gender() {
 		return rc_gender;
 	}
@@ -165,6 +191,7 @@ public class StudentStatistics implements Serializable{
 		this.rc_gender = rc_gender;
 	}
 
+	@Column
 	public String getRc_enrollment_status() {
 		return rc_enrollment_status;
 	}
@@ -173,6 +200,7 @@ public class StudentStatistics implements Serializable{
 		this.rc_enrollment_status = rc_enrollment_status;
 	}
 
+	@Column
 	public String getRc_class_code() {
 		return rc_class_code;
 	}
@@ -181,22 +209,25 @@ public class StudentStatistics implements Serializable{
 		this.rc_class_code = rc_class_code;
 	}
 
-	public BigDecimal getGpa_cumulative() {
+	@Column
+	public double getGpa_cumulative() {
 		return gpa_cumulative;
 	}
 
-	public void setGpa_cumulative(BigDecimal gpa_cumulative) {
+	public void setGpa_cumulative(double gpa_cumulative) {
 		this.gpa_cumulative = gpa_cumulative;
 	}
 
-	public BigDecimal getGpa_semester() {
+	@Column
+	public double getGpa_semester() {
 		return gpa_semester;
 	}
 
-	public void setGpa_semester(BigDecimal gpa_semester) {
+	public void setGpa_semester(double gpa_semester) {
 		this.gpa_semester = gpa_semester;
 	}
 
+	@Column
 	public String getStanding() {
 		return standing;
 	}
@@ -205,30 +236,34 @@ public class StudentStatistics implements Serializable{
 		this.standing = standing;
 	}
 
-	public int getRmn_score() {
+	@Column
+	public double getRmn_score() {
 		return rmn_score;
 	}
 
-	public void setRmn_score(int rmn_score) {
+	public void setRmn_score(double rmn_score) {
 		this.rmn_score = rmn_score;
 	}
 
-	public BigDecimal getRmn_score_partial() {
+	@Column
+	public double getRmn_score_partial() {
 		return rmn_score_partial;
 	}
 
-	public void setRmn_score_partial(BigDecimal rmn_score_partial) {
+	public void setRmn_score_partial(double rmn_score_partial) {
 		this.rmn_score_partial = rmn_score_partial;
 	}
 
-	public BigDecimal getR_content_read() {
+	@Column
+	public double getR_content_read() {
 		return r_content_read;
 	}
 
-	public void setR_content_read(BigDecimal r_content_read) {
+	public void setR_content_read(double r_content_read) {
 		this.r_content_read = r_content_read;
 	}
 
+	@Column
 	public String getR_assmt_sub() {
 		return r_assmt_sub;
 	}
@@ -237,62 +272,70 @@ public class StudentStatistics implements Serializable{
 		this.r_assmt_sub = r_assmt_sub;
 	}
 
-	public BigDecimal getR_forum_post() {
+	@Column
+	public double getR_forum_post() {
 		return r_forum_post;
 	}
 
-	public void setR_forum_post(BigDecimal r_forum_post) {
+	public void setR_forum_post(double r_forum_post) {
 		this.r_forum_post = r_forum_post;
 	}
 
-	public BigDecimal getR_forum_read() {
+	@Column
+	public double getR_forum_read() {
 		return r_forum_read;
 	}
 
-	public void setR_forum_read(BigDecimal r_forum_read) {
+	public void setR_forum_read(double r_forum_read) {
 		this.r_forum_read = r_forum_read;
 	}
 
-	public BigDecimal getR_lessons_view() {
+	@Column
+	public double getR_lessons_view() {
 		return r_lessons_view;
 	}
 
-	public void setR_lessons_view(BigDecimal r_lessons_view) {
+	public void setR_lessons_view(double r_lessons_view) {
 		this.r_lessons_view = r_lessons_view;
 	}
 
-	public BigDecimal getR_assmt_take() {
+	@Column
+	public double getR_assmt_take() {
 		return r_assmt_take;
 	}
 
-	public void setR_assmt_take(BigDecimal r_assmt_take) {
+	public void setR_assmt_take(double r_assmt_take) {
 		this.r_assmt_take = r_assmt_take;
 	}
 
-	public BigDecimal getR_asn_sub() {
+	@Column
+	public double getR_asn_sub() {
 		return r_asn_sub;
 	}
 
-	public void setR_asn_sub(BigDecimal r_asn_sub) {
+	public void setR_asn_sub(double r_asn_sub) {
 		this.r_asn_sub = r_asn_sub;
 	}
 
-	public BigDecimal getR_asn_read() {
+	@Column
+	public double getR_asn_read() {
 		return r_asn_read;
 	}
 
-	public void setR_asn_read(BigDecimal r_asn_read) {
+	public void setR_asn_read(double r_asn_read) {
 		this.r_asn_read = r_asn_read;
 	}
 
-	public BigDecimal getR_sessions() {
+	@Column
+	public double getR_sessions() {
 		return r_sessions;
 	}
 
-	public void setR_sessions(BigDecimal r_sessions) {
+	public void setR_sessions(double r_sessions) {
 		this.r_sessions = r_sessions;
 	}
 
+	@Column
 	public String getAcademic_risk() {
 		return academic_risk;
 	}
@@ -301,22 +344,25 @@ public class StudentStatistics implements Serializable{
 		this.academic_risk = academic_risk;
 	}
 
-	public BigDecimal getFail_probability() {
+	@Column
+	public double getFail_probability() {
 		return fail_probability;
 	}
 
-	public void setFail_probability(BigDecimal fail_probability) {
+	public void setFail_probability(double fail_probability) {
 		this.fail_probability = fail_probability;
 	}
 
-	public BigDecimal getPass_probability() {
+	@Column
+	public double getPass_probability() {
 		return pass_probability;
 	}
 
-	public void setPass_probability(BigDecimal pass_probability) {
+	public void setPass_probability(double pass_probability) {
 		this.pass_probability = pass_probability;
 	}
 
+	@Column
 	public String getModel_risk_confidence() {
 		return model_risk_confidence;
 	}
@@ -335,28 +381,44 @@ public class StudentStatistics implements Serializable{
 		result = prime * result + aptitude_score;
 		result = prime * result + ((course_id == null) ? 0 : course_id.hashCode());
 		result = prime * result + ((enrollment == null) ? 0 : enrollment.hashCode());
-		result = prime * result + ((fail_probability == null) ? 0 : fail_probability.hashCode());
-		result = prime * result + ((gpa_cumulative == null) ? 0 : gpa_cumulative.hashCode());
-		result = prime * result + ((gpa_semester == null) ? 0 : gpa_semester.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(fail_probability);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(gpa_cumulative);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(gpa_semester);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((model_risk_confidence == null) ? 0 : model_risk_confidence.hashCode());
 		result = prime * result + ((online_flag == null) ? 0 : online_flag.hashCode());
-		result = prime * result + ((pass_probability == null) ? 0 : pass_probability.hashCode());
+		temp = Double.doubleToLongBits(pass_probability);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + percentile;
-		result = prime * result + ((r_asn_read == null) ? 0 : r_asn_read.hashCode());
-		result = prime * result + ((r_asn_sub == null) ? 0 : r_asn_sub.hashCode());
+		temp = Double.doubleToLongBits(r_asn_read);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(r_asn_sub);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((r_assmt_sub == null) ? 0 : r_assmt_sub.hashCode());
-		result = prime * result + ((r_assmt_take == null) ? 0 : r_assmt_take.hashCode());
-		result = prime * result + ((r_content_read == null) ? 0 : r_content_read.hashCode());
-		result = prime * result + ((r_forum_post == null) ? 0 : r_forum_post.hashCode());
-		result = prime * result + ((r_forum_read == null) ? 0 : r_forum_read.hashCode());
-		result = prime * result + ((r_lessons_view == null) ? 0 : r_lessons_view.hashCode());
-		result = prime * result + ((r_sessions == null) ? 0 : r_sessions.hashCode());
+		temp = Double.doubleToLongBits(r_assmt_take);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(r_content_read);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(r_forum_post);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(r_forum_read);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(r_lessons_view);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(r_sessions);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((rc_class_code == null) ? 0 : rc_class_code.hashCode());
 		result = prime * result + ((rc_enrollment_status == null) ? 0 : rc_enrollment_status.hashCode());
-		result = prime * result + ((rc_final_grade == null) ? 0 : rc_final_grade.hashCode());
+		temp = Double.doubleToLongBits(rc_final_grade);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + rc_gender;
-		result = prime * result + rmn_score;
-		result = prime * result + ((rmn_score_partial == null) ? 0 : rmn_score_partial.hashCode());
+		temp = Double.doubleToLongBits(rmn_score);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(rmn_score_partial);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + sat_math;
 		result = prime * result + sat_verbal;
 		result = prime * result + ((standing == null) ? 0 : standing.hashCode());
@@ -397,20 +459,11 @@ public class StudentStatistics implements Serializable{
 				return false;
 		} else if (!enrollment.equals(other.enrollment))
 			return false;
-		if (fail_probability == null) {
-			if (other.fail_probability != null)
-				return false;
-		} else if (!fail_probability.equals(other.fail_probability))
+		if (Double.doubleToLongBits(fail_probability) != Double.doubleToLongBits(other.fail_probability))
 			return false;
-		if (gpa_cumulative == null) {
-			if (other.gpa_cumulative != null)
-				return false;
-		} else if (!gpa_cumulative.equals(other.gpa_cumulative))
+		if (Double.doubleToLongBits(gpa_cumulative) != Double.doubleToLongBits(other.gpa_cumulative))
 			return false;
-		if (gpa_semester == null) {
-			if (other.gpa_semester != null)
-				return false;
-		} else if (!gpa_semester.equals(other.gpa_semester))
+		if (Double.doubleToLongBits(gpa_semester) != Double.doubleToLongBits(other.gpa_semester))
 			return false;
 		if (model_risk_confidence == null) {
 			if (other.model_risk_confidence != null)
@@ -422,57 +475,30 @@ public class StudentStatistics implements Serializable{
 				return false;
 		} else if (!online_flag.equals(other.online_flag))
 			return false;
-		if (pass_probability == null) {
-			if (other.pass_probability != null)
-				return false;
-		} else if (!pass_probability.equals(other.pass_probability))
+		if (Double.doubleToLongBits(pass_probability) != Double.doubleToLongBits(other.pass_probability))
 			return false;
 		if (percentile != other.percentile)
 			return false;
-		if (r_asn_read == null) {
-			if (other.r_asn_read != null)
-				return false;
-		} else if (!r_asn_read.equals(other.r_asn_read))
+		if (Double.doubleToLongBits(r_asn_read) != Double.doubleToLongBits(other.r_asn_read))
 			return false;
-		if (r_asn_sub == null) {
-			if (other.r_asn_sub != null)
-				return false;
-		} else if (!r_asn_sub.equals(other.r_asn_sub))
+		if (Double.doubleToLongBits(r_asn_sub) != Double.doubleToLongBits(other.r_asn_sub))
 			return false;
 		if (r_assmt_sub == null) {
 			if (other.r_assmt_sub != null)
 				return false;
 		} else if (!r_assmt_sub.equals(other.r_assmt_sub))
 			return false;
-		if (r_assmt_take == null) {
-			if (other.r_assmt_take != null)
-				return false;
-		} else if (!r_assmt_take.equals(other.r_assmt_take))
+		if (Double.doubleToLongBits(r_assmt_take) != Double.doubleToLongBits(other.r_assmt_take))
 			return false;
-		if (r_content_read == null) {
-			if (other.r_content_read != null)
-				return false;
-		} else if (!r_content_read.equals(other.r_content_read))
+		if (Double.doubleToLongBits(r_content_read) != Double.doubleToLongBits(other.r_content_read))
 			return false;
-		if (r_forum_post == null) {
-			if (other.r_forum_post != null)
-				return false;
-		} else if (!r_forum_post.equals(other.r_forum_post))
+		if (Double.doubleToLongBits(r_forum_post) != Double.doubleToLongBits(other.r_forum_post))
 			return false;
-		if (r_forum_read == null) {
-			if (other.r_forum_read != null)
-				return false;
-		} else if (!r_forum_read.equals(other.r_forum_read))
+		if (Double.doubleToLongBits(r_forum_read) != Double.doubleToLongBits(other.r_forum_read))
 			return false;
-		if (r_lessons_view == null) {
-			if (other.r_lessons_view != null)
-				return false;
-		} else if (!r_lessons_view.equals(other.r_lessons_view))
+		if (Double.doubleToLongBits(r_lessons_view) != Double.doubleToLongBits(other.r_lessons_view))
 			return false;
-		if (r_sessions == null) {
-			if (other.r_sessions != null)
-				return false;
-		} else if (!r_sessions.equals(other.r_sessions))
+		if (Double.doubleToLongBits(r_sessions) != Double.doubleToLongBits(other.r_sessions))
 			return false;
 		if (rc_class_code == null) {
 			if (other.rc_class_code != null)
@@ -484,19 +510,13 @@ public class StudentStatistics implements Serializable{
 				return false;
 		} else if (!rc_enrollment_status.equals(other.rc_enrollment_status))
 			return false;
-		if (rc_final_grade == null) {
-			if (other.rc_final_grade != null)
-				return false;
-		} else if (!rc_final_grade.equals(other.rc_final_grade))
+		if (Double.doubleToLongBits(rc_final_grade) != Double.doubleToLongBits(other.rc_final_grade))
 			return false;
 		if (rc_gender != other.rc_gender)
 			return false;
-		if (rmn_score != other.rmn_score)
+		if (Double.doubleToLongBits(rmn_score) != Double.doubleToLongBits(other.rmn_score))
 			return false;
-		if (rmn_score_partial == null) {
-			if (other.rmn_score_partial != null)
-				return false;
-		} else if (!rmn_score_partial.equals(other.rmn_score_partial))
+		if (Double.doubleToLongBits(rmn_score_partial) != Double.doubleToLongBits(other.rmn_score_partial))
 			return false;
 		if (sat_math != other.sat_math)
 			return false;
@@ -530,7 +550,6 @@ public class StudentStatistics implements Serializable{
 				+ ", academic_risk=" + academic_risk + ", fail_probability=" + fail_probability + ", pass_probability="
 				+ pass_probability + ", model_risk_confidence=" + model_risk_confidence + "]";
 	}
-	
 	
 	
 }
