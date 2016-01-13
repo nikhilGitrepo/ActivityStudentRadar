@@ -1,5 +1,9 @@
-org\at\configuration\HibernateConfiguration.class
+org\at\service\ActivityRadarDao.class
 org\at\pojo\StudentStatistics.class
+org\at\config\HibernateConfiguration.class
+org\at\service\ActivityRadarService.class
 org\at\Application.class
+org\at\transaction\ActivityRadarTransaction.class
 org\at\util\HibernateUtil.class
 org\at\controller\RadarController.class
+org\at\transaction\ActivityRadarTransactionDao.class

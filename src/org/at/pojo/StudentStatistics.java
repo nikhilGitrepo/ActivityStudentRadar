@@ -28,385 +28,385 @@ public class StudentStatistics implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private String alternative_id;
-	private String course_id;
-	private String subject;
-	private String online_flag;
-	private String enrollment;
-	private Double rc_final_grade;
-	private Integer percentile;
-	private Integer sat_verbal;
-	private Integer sat_math;
-	private Integer aptitude_score;
-	private Integer age;
-	private Integer rc_gender;
-	private String rc_enrollment_status;
-	private String rc_class_code;
-	private Double gpa_cumulative;
-	private Double gpa_semester;
-	private String standing;
-	private Double rmn_score;
-	private Double rmn_score_partial;
-	private Double r_content_read;
-	private String r_assmt_sub;
-	private Double r_forum_post;
-	private Double r_forum_read;
-	private Double r_lessons_view;
-	private Double r_assmt_take;
-	private Double r_asn_sub;
-	private Double r_asn_read;
-	private Double r_sessions;
-	private String academic_risk;
-	private Double fail_probability;
-	private Double pass_probability;
-	private String model_risk_confidence;
+	private String ALTERNATIVE_ID;
+	private String COURSE_ID;
+	private String SUBJECT;
+	private String ONLINE_FLAG;
+	private String ENROLLMENT;
+	private Double RC_FINAL_GRADE;
+	private Integer PERCENTILE;
+	private Integer SAT_VERBAL;
+	private Integer SAT_MATH;
+	private Integer APTITUDE_SCORE;
+	private Integer AGE;
+	private Integer RC_GENDER;
+	private String RC_ENROLLMENT_STATUS;
+	private String RC_CLASS_CODE;
+	private Double GPA_CUMULATIVE;
+	private Double GPA_SEMESTER;
+	private String STANDING;
+	private Double RMN_SCORE;
+	private Double RMN_SCORE_PARTIAL;
+	private Double R_CONTENT_READ;
+	private String R_ASSMT_SUB;
+	private Double R_FORUM_POST;
+	private Double R_FORUM_READ;
+	private Double R_LESSONS_VIEW;
+	private Double R_ASSMT_TAKE;
+	private Double R_ASN_SUB;
+	private Double R_ASN_READ;
+	private Double R_SESSIONS;
+	private String ACADEMIC_RISK;
+	private Double FAIL_PROBABILITY;
+	private Double PASS_PROBABILITY;
+	private String MODEL_RISK_CONFIDENCE;
 	
 	public StudentStatistics() {
 	}
 
-	public StudentStatistics(String alternative_id, String course_id, String subject, Integer age, Integer rc_gender,
-			Double gpa_cumulative, Double rmn_score, Double r_content_read, Double r_forum_post,
-			Double r_asn_sub, Double r_sessions, String model_risk_confidence) {
+	public StudentStatistics(String ALTERNATIVE_ID, String COURSE_ID, String SUBJECT, Integer AGE, Integer RC_GENDER,
+			Double GPA_CUMULATIVE, Double RMN_SCORE, Double R_CONTENT_READ, Double R_FORUM_POST,
+			Double R_ASN_SUB, Double R_SESSIONS, String MODEL_RISK_CONFIDENCE) {
 
-		this.alternative_id = alternative_id;
-		this.course_id = course_id;
-		this.subject = subject;
-		this.age = age;
-		this.rc_gender = rc_gender;
-		this.gpa_cumulative = gpa_cumulative;
-		this.rmn_score = rmn_score;
-		this.r_content_read = r_content_read;
-		this.r_forum_post = r_forum_post;
-		this.r_asn_sub = r_asn_sub;
-		this.r_sessions = r_sessions;
-		this.model_risk_confidence = model_risk_confidence;
+		this.ALTERNATIVE_ID = ALTERNATIVE_ID;
+		this.COURSE_ID = COURSE_ID;
+		this.SUBJECT = SUBJECT;
+		this.AGE = AGE;
+		this.RC_GENDER = RC_GENDER;
+		this.GPA_CUMULATIVE = GPA_CUMULATIVE;
+		this.RMN_SCORE = RMN_SCORE;
+		this.R_CONTENT_READ = R_CONTENT_READ;
+		this.R_FORUM_POST = R_FORUM_POST;
+		this.R_ASN_SUB = R_ASN_SUB;
+		this.R_SESSIONS = R_SESSIONS;
+		this.MODEL_RISK_CONFIDENCE = MODEL_RISK_CONFIDENCE;
 	}
 
 	@Id
 	@Column(nullable = false)
-	public String getAlternative_id() {
-		return alternative_id;
+	public String getALTERNATIVE_ID() {
+		return ALTERNATIVE_ID;
 	}
 
-	public void setAlternative_id(String alternative_id) {
-		this.alternative_id = alternative_id;
-	}
-
-	@Column(nullable = true)
-	public String getCourse_id() {
-		return course_id;
-	}
-
-	public void setCourse_id(String course_id) {
-		this.course_id = course_id;
+	public void setALTERNATIVE_ID(String ALTERNATIVE_ID) {
+		this.ALTERNATIVE_ID = ALTERNATIVE_ID;
 	}
 
 	@Column(nullable = true)
-	public String getSubject() {
-		return subject;
+	public String getCOURSE_ID() {
+		return COURSE_ID;
 	}
 
-	public void setSubject(String subject) {
-		this.subject = subject;
-	}
-
-	@Column(nullable = true)
-	public String getOnline_flag() {
-		return online_flag;
-	}
-
-	public void setOnline_flag(String online_flag) {
-		this.online_flag = online_flag;
+	public void setCOURSE_ID(String COURSE_ID) {
+		this.COURSE_ID = COURSE_ID;
 	}
 
 	@Column(nullable = true)
-	public String getEnrollment() {
-		return enrollment;
+	public String getSUBJECT() {
+		return SUBJECT;
 	}
 
-	public void setEnrollment(String enrollment) {
-		this.enrollment = enrollment;
-	}
-
-	@Column(nullable = true)
-	public Double getRc_final_grade() {
-		return rc_final_grade;
-	}
-
-	public void setRc_final_grade(Double rc_final_grade) {
-		this.rc_final_grade = rc_final_grade;
+	public void setSUBJECT(String SUBJECT) {
+		this.SUBJECT = SUBJECT;
 	}
 
 	@Column(nullable = true)
-	public Integer getPercentile() {
-		return percentile;
+	public String getONLINE_FLAG() {
+		return ONLINE_FLAG;
 	}
 
-	public void setPercentile(Integer percentile) {
-		this.percentile = percentile;
-	}
-
-	@Column(nullable = true)
-	public Integer getSat_verbal() {
-		return sat_verbal;
-	}
-
-	public void setSat_verbal(Integer sat_verbal) {
-		this.sat_verbal = sat_verbal;
+	public void setONLINE_FLAG(String ONLINE_FLAG) {
+		this.ONLINE_FLAG = ONLINE_FLAG;
 	}
 
 	@Column(nullable = true)
-	public Integer getSat_math() {
-		return sat_math;
+	public String getENROLLMENT() {
+		return ENROLLMENT;
 	}
 
-	public void setSat_math(Integer sat_math) {
-		this.sat_math = sat_math;
-	}
-
-	@Column(nullable = true)
-	public Integer getAptitude_score() {
-		return aptitude_score;
-	}
-
-	public void setAptitude_score(Integer aptitude_score) {
-		this.aptitude_score = aptitude_score;
+	public void setENROLLMENT(String ENROLLMENT) {
+		this.ENROLLMENT = ENROLLMENT;
 	}
 
 	@Column(nullable = true)
-	public Integer getAge() {
-		return age;
+	public Double getRC_FINAL_GRADE() {
+		return RC_FINAL_GRADE;
 	}
 
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-
-	@Column(nullable = true)
-	public Integer getRc_gender() {
-		return rc_gender;
-	}
-
-	public void setRc_gender(Integer rc_gender) {
-		this.rc_gender = rc_gender;
+	public void setRC_FINAL_GRADE(Double RC_FINAL_GRADE) {
+		this.RC_FINAL_GRADE = RC_FINAL_GRADE;
 	}
 
 	@Column(nullable = true)
-	public String getRc_enrollment_status() {
-		return rc_enrollment_status;
+	public Integer getPERCENTILE() {
+		return PERCENTILE;
 	}
 
-	public void setRc_enrollment_status(String rc_enrollment_status) {
-		this.rc_enrollment_status = rc_enrollment_status;
-	}
-
-	@Column(nullable = true)
-	public String getRc_class_code() {
-		return rc_class_code;
-	}
-
-	public void setRc_class_code(String rc_class_code) {
-		this.rc_class_code = rc_class_code;
+	public void setPERCENTILE(Integer PERCENTILE) {
+		this.PERCENTILE = PERCENTILE;
 	}
 
 	@Column(nullable = true)
-	public Double getGpa_cumulative() {
-		return gpa_cumulative;
+	public Integer getSAT_VERBAL() {
+		return SAT_VERBAL;
 	}
 
-	public void setGpa_cumulative(Double gpa_cumulative) {
-		this.gpa_cumulative = gpa_cumulative;
-	}
-
-	@Column(nullable = true)
-	public Double getGpa_semester() {
-		return gpa_semester;
-	}
-
-	public void setGpa_semester(Double gpa_semester) {
-		this.gpa_semester = gpa_semester;
+	public void setSAT_VERBAL(Integer SAT_VERBAL) {
+		this.SAT_VERBAL = SAT_VERBAL;
 	}
 
 	@Column(nullable = true)
-	public String getStanding() {
-		return standing;
+	public Integer getSAT_MATH() {
+		return SAT_MATH;
 	}
 
-	public void setStanding(String standing) {
-		this.standing = standing;
-	}
-
-	@Column(nullable = true)
-	public Double getRmn_score() {
-		return rmn_score;
-	}
-
-	public void setRmn_score(Double rmn_score) {
-		this.rmn_score = rmn_score;
+	public void setSAT_MATH(Integer SAT_MATH) {
+		this.SAT_MATH = SAT_MATH;
 	}
 
 	@Column(nullable = true)
-	public Double getRmn_score_partial() {
-		return rmn_score_partial;
+	public Integer getAPTITUDE_SCORE() {
+		return APTITUDE_SCORE;
 	}
 
-	public void setRmn_score_partial(Double rmn_score_partial) {
-		this.rmn_score_partial = rmn_score_partial;
-	}
-
-	@Column(nullable = true)
-	public Double getR_content_read() {
-		return r_content_read;
-	}
-
-	public void setR_content_read(Double r_content_read) {
-		this.r_content_read = r_content_read;
+	public void setAPTITUDE_SCORE(Integer APTITUDE_SCORE) {
+		this.APTITUDE_SCORE = APTITUDE_SCORE;
 	}
 
 	@Column(nullable = true)
-	public String getR_assmt_sub() {
-		return r_assmt_sub;
+	public Integer getAGE() {
+		return AGE;
 	}
 
-	public void setR_assmt_sub(String r_assmt_sub) {
-		this.r_assmt_sub = r_assmt_sub;
-	}
-
-	@Column(nullable = true)
-	public Double getR_forum_post() {
-		return r_forum_post;
-	}
-
-	public void setR_forum_post(Double r_forum_post) {
-		this.r_forum_post = r_forum_post;
+	public void setAGE(Integer AGE) {
+		this.AGE = AGE;
 	}
 
 	@Column(nullable = true)
-	public Double getR_forum_read() {
-		return r_forum_read;
+	public Integer getRC_GENDER() {
+		return RC_GENDER;
 	}
 
-	public void setR_forum_read(Double r_forum_read) {
-		this.r_forum_read = r_forum_read;
-	}
-
-	@Column(nullable = true)
-	public Double getR_lessons_view() {
-		return r_lessons_view;
-	}
-
-	public void setR_lessons_view(Double r_lessons_view) {
-		this.r_lessons_view = r_lessons_view;
+	public void setRC_GENDER(Integer RC_GENDER) {
+		this.RC_GENDER = RC_GENDER;
 	}
 
 	@Column(nullable = true)
-	public Double getR_assmt_take() {
-		return r_assmt_take;
+	public String getRC_ENROLLMENT_STATUS() {
+		return RC_ENROLLMENT_STATUS;
 	}
 
-	public void setR_assmt_take(Double r_assmt_take) {
-		this.r_assmt_take = r_assmt_take;
-	}
-
-	@Column(nullable = true)
-	public Double getR_asn_sub() {
-		return r_asn_sub;
-	}
-
-	public void setR_asn_sub(Double r_asn_sub) {
-		this.r_asn_sub = r_asn_sub;
+	public void setRC_ENROLLMENT_STATUS(String RC_ENROLLMENT_STATUS) {
+		this.RC_ENROLLMENT_STATUS = RC_ENROLLMENT_STATUS;
 	}
 
 	@Column(nullable = true)
-	public Double getR_asn_read() {
-		return r_asn_read;
+	public String getRC_CLASS_CODE() {
+		return RC_CLASS_CODE;
 	}
 
-	public void setR_asn_read(Double r_asn_read) {
-		this.r_asn_read = r_asn_read;
-	}
-
-	@Column(nullable = true)
-	public Double getR_sessions() {
-		return r_sessions;
-	}
-
-	public void setR_sessions(Double r_sessions) {
-		this.r_sessions = r_sessions;
+	public void setRC_CLASS_CODE(String RC_CLASS_CODE) {
+		this.RC_CLASS_CODE = RC_CLASS_CODE;
 	}
 
 	@Column(nullable = true)
-	public String getAcademic_risk() {
-		return academic_risk;
+	public Double getGPA_CUMULATIVE() {
+		return GPA_CUMULATIVE;
 	}
 
-	public void setAcademic_risk(String academic_risk) {
-		this.academic_risk = academic_risk;
-	}
-
-	@Column(nullable = true)
-	public Double getFail_probability() {
-		return fail_probability;
-	}
-
-	public void setFail_probability(Double fail_probability) {
-		this.fail_probability = fail_probability;
+	public void setGPA_CUMULATIVE(Double GPA_CUMULATIVE) {
+		this.GPA_CUMULATIVE = GPA_CUMULATIVE;
 	}
 
 	@Column(nullable = true)
-	public Double getPass_probability() {
-		return pass_probability;
+	public Double getGPA_SEMESTER() {
+		return GPA_SEMESTER;
 	}
 
-	public void setPass_probability(Double pass_probability) {
-		this.pass_probability = pass_probability;
+	public void setGPA_SEMESTER(Double GPA_SEMESTER) {
+		this.GPA_SEMESTER = GPA_SEMESTER;
 	}
 
 	@Column(nullable = true)
-	public String getModel_risk_confidence() {
-		return model_risk_confidence;
+	public String getSTANDING() {
+		return STANDING;
 	}
 
-	public void setModel_risk_confidence(String model_risk_confidence) {
-		this.model_risk_confidence = model_risk_confidence;
+	public void setSTANDING(String STANDING) {
+		this.STANDING = STANDING;
+	}
+
+	@Column(nullable = true)
+	public Double getRMN_SCORE() {
+		return RMN_SCORE;
+	}
+
+	public void setRMN_SCORE(Double RMN_SCORE) {
+		this.RMN_SCORE = RMN_SCORE;
+	}
+
+	@Column(nullable = true)
+	public Double getRMN_SCORE_PARTIAL() {
+		return RMN_SCORE_PARTIAL;
+	}
+
+	public void setRMN_SCORE_PARTIAL(Double RMN_SCORE_PARTIAL) {
+		this.RMN_SCORE_PARTIAL = RMN_SCORE_PARTIAL;
+	}
+
+	@Column(nullable = true)
+	public Double getR_CONTENT_READ() {
+		return R_CONTENT_READ;
+	}
+
+	public void setR_CONTENT_READ(Double R_CONTENT_READ) {
+		this.R_CONTENT_READ = R_CONTENT_READ;
+	}
+
+	@Column(nullable = true)
+	public String getR_ASSMT_SUB() {
+		return R_ASSMT_SUB;
+	}
+
+	public void setR_ASSMT_SUB(String R_ASSMT_SUB) {
+		this.R_ASSMT_SUB = R_ASSMT_SUB;
+	}
+
+	@Column(nullable = true)
+	public Double getR_FORUM_POST() {
+		return R_FORUM_POST;
+	}
+
+	public void setR_FORUM_POST(Double R_FORUM_POST) {
+		this.R_FORUM_POST = R_FORUM_POST;
+	}
+
+	@Column(nullable = true)
+	public Double getR_FORUM_READ() {
+		return R_FORUM_READ;
+	}
+
+	public void setR_FORUM_READ(Double R_FORUM_READ) {
+		this.R_FORUM_READ = R_FORUM_READ;
+	}
+
+	@Column(nullable = true)
+	public Double getR_LESSONS_VIEW() {
+		return R_LESSONS_VIEW;
+	}
+
+	public void setR_LESSONS_VIEW(Double R_LESSONS_VIEW) {
+		this.R_LESSONS_VIEW = R_LESSONS_VIEW;
+	}
+
+	@Column(nullable = true)
+	public Double getR_ASSMT_TAKE() {
+		return R_ASSMT_TAKE;
+	}
+
+	public void setR_ASSMT_TAKE(Double R_ASSMT_TAKE) {
+		this.R_ASSMT_TAKE = R_ASSMT_TAKE;
+	}
+
+	@Column(nullable = true)
+	public Double getR_ASN_SUB() {
+		return R_ASN_SUB;
+	}
+
+	public void setR_ASN_SUB(Double R_ASN_SUB) {
+		this.R_ASN_SUB = R_ASN_SUB;
+	}
+
+	@Column(nullable = true)
+	public Double getR_ASN_READ() {
+		return R_ASN_READ;
+	}
+
+	public void setR_ASN_READ(Double R_ASN_READ) {
+		this.R_ASN_READ = R_ASN_READ;
+	}
+
+	@Column(nullable = true)
+	public Double getR_SESSIONS() {
+		return R_SESSIONS;
+	}
+
+	public void setR_SESSIONS(Double R_SESSIONS) {
+		this.R_SESSIONS = R_SESSIONS;
+	}
+
+	@Column(nullable = true)
+	public String getACADEMIC_RISK() {
+		return ACADEMIC_RISK;
+	}
+
+	public void setACADEMIC_RISK(String ACADEMIC_RISK) {
+		this.ACADEMIC_RISK = ACADEMIC_RISK;
+	}
+
+	@Column(nullable = true)
+	public Double getFAIL_PROBABILITY() {
+		return FAIL_PROBABILITY;
+	}
+
+	public void setFAIL_PROBABILITY(Double FAIL_PROBABILITY) {
+		this.FAIL_PROBABILITY = FAIL_PROBABILITY;
+	}
+
+	@Column(nullable = true)
+	public Double getPASS_PROBABILITY() {
+		return PASS_PROBABILITY;
+	}
+
+	public void setPASS_PROBABILITY(Double PASS_PROBABILITY) {
+		this.PASS_PROBABILITY = PASS_PROBABILITY;
+	}
+
+	@Column(nullable = true)
+	public String getMODEL_RISK_CONFIDENCE() {
+		return MODEL_RISK_CONFIDENCE;
+	}
+
+	public void setMODEL_RISK_CONFIDENCE(String MODEL_RISK_CONFIDENCE) {
+		this.MODEL_RISK_CONFIDENCE = MODEL_RISK_CONFIDENCE;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((academic_risk == null) ? 0 : academic_risk.hashCode());
-		result = prime * result + ((age == null) ? 0 : age.hashCode());
-		result = prime * result + ((alternative_id == null) ? 0 : alternative_id.hashCode());
-		result = prime * result + ((aptitude_score == null) ? 0 : aptitude_score.hashCode());
-		result = prime * result + ((course_id == null) ? 0 : course_id.hashCode());
-		result = prime * result + ((enrollment == null) ? 0 : enrollment.hashCode());
-		result = prime * result + ((fail_probability == null) ? 0 : fail_probability.hashCode());
-		result = prime * result + ((gpa_cumulative == null) ? 0 : gpa_cumulative.hashCode());
-		result = prime * result + ((gpa_semester == null) ? 0 : gpa_semester.hashCode());
-		result = prime * result + ((model_risk_confidence == null) ? 0 : model_risk_confidence.hashCode());
-		result = prime * result + ((online_flag == null) ? 0 : online_flag.hashCode());
-		result = prime * result + ((pass_probability == null) ? 0 : pass_probability.hashCode());
-		result = prime * result + ((percentile == null) ? 0 : percentile.hashCode());
-		result = prime * result + ((r_asn_read == null) ? 0 : r_asn_read.hashCode());
-		result = prime * result + ((r_asn_sub == null) ? 0 : r_asn_sub.hashCode());
-		result = prime * result + ((r_assmt_sub == null) ? 0 : r_assmt_sub.hashCode());
-		result = prime * result + ((r_assmt_take == null) ? 0 : r_assmt_take.hashCode());
-		result = prime * result + ((r_content_read == null) ? 0 : r_content_read.hashCode());
-		result = prime * result + ((r_forum_post == null) ? 0 : r_forum_post.hashCode());
-		result = prime * result + ((r_forum_read == null) ? 0 : r_forum_read.hashCode());
-		result = prime * result + ((r_lessons_view == null) ? 0 : r_lessons_view.hashCode());
-		result = prime * result + ((r_sessions == null) ? 0 : r_sessions.hashCode());
-		result = prime * result + ((rc_class_code == null) ? 0 : rc_class_code.hashCode());
-		result = prime * result + ((rc_enrollment_status == null) ? 0 : rc_enrollment_status.hashCode());
-		result = prime * result + ((rc_final_grade == null) ? 0 : rc_final_grade.hashCode());
-		result = prime * result + ((rc_gender == null) ? 0 : rc_gender.hashCode());
-		result = prime * result + ((rmn_score == null) ? 0 : rmn_score.hashCode());
-		result = prime * result + ((rmn_score_partial == null) ? 0 : rmn_score_partial.hashCode());
-		result = prime * result + ((sat_math == null) ? 0 : sat_math.hashCode());
-		result = prime * result + ((sat_verbal == null) ? 0 : sat_verbal.hashCode());
-		result = prime * result + ((standing == null) ? 0 : standing.hashCode());
-		result = prime * result + ((subject == null) ? 0 : subject.hashCode());
+		result = prime * result + ((ACADEMIC_RISK == null) ? 0 : ACADEMIC_RISK.hashCode());
+		result = prime * result + ((AGE == null) ? 0 : AGE.hashCode());
+		result = prime * result + ((ALTERNATIVE_ID == null) ? 0 : ALTERNATIVE_ID.hashCode());
+		result = prime * result + ((APTITUDE_SCORE == null) ? 0 : APTITUDE_SCORE.hashCode());
+		result = prime * result + ((COURSE_ID == null) ? 0 : COURSE_ID.hashCode());
+		result = prime * result + ((ENROLLMENT == null) ? 0 : ENROLLMENT.hashCode());
+		result = prime * result + ((FAIL_PROBABILITY == null) ? 0 : FAIL_PROBABILITY.hashCode());
+		result = prime * result + ((GPA_CUMULATIVE == null) ? 0 : GPA_CUMULATIVE.hashCode());
+		result = prime * result + ((GPA_SEMESTER == null) ? 0 : GPA_SEMESTER.hashCode());
+		result = prime * result + ((MODEL_RISK_CONFIDENCE == null) ? 0 : MODEL_RISK_CONFIDENCE.hashCode());
+		result = prime * result + ((ONLINE_FLAG == null) ? 0 : ONLINE_FLAG.hashCode());
+		result = prime * result + ((PASS_PROBABILITY == null) ? 0 : PASS_PROBABILITY.hashCode());
+		result = prime * result + ((PERCENTILE == null) ? 0 : PERCENTILE.hashCode());
+		result = prime * result + ((R_ASN_READ == null) ? 0 : R_ASN_READ.hashCode());
+		result = prime * result + ((R_ASN_SUB == null) ? 0 : R_ASN_SUB.hashCode());
+		result = prime * result + ((R_ASSMT_SUB == null) ? 0 : R_ASSMT_SUB.hashCode());
+		result = prime * result + ((R_ASSMT_TAKE == null) ? 0 : R_ASSMT_TAKE.hashCode());
+		result = prime * result + ((R_CONTENT_READ == null) ? 0 : R_CONTENT_READ.hashCode());
+		result = prime * result + ((R_FORUM_POST == null) ? 0 : R_FORUM_POST.hashCode());
+		result = prime * result + ((R_FORUM_READ == null) ? 0 : R_FORUM_READ.hashCode());
+		result = prime * result + ((R_LESSONS_VIEW == null) ? 0 : R_LESSONS_VIEW.hashCode());
+		result = prime * result + ((R_SESSIONS == null) ? 0 : R_SESSIONS.hashCode());
+		result = prime * result + ((RC_CLASS_CODE == null) ? 0 : RC_CLASS_CODE.hashCode());
+		result = prime * result + ((RC_ENROLLMENT_STATUS == null) ? 0 : RC_ENROLLMENT_STATUS.hashCode());
+		result = prime * result + ((RC_FINAL_GRADE == null) ? 0 : RC_FINAL_GRADE.hashCode());
+		result = prime * result + ((RC_GENDER == null) ? 0 : RC_GENDER.hashCode());
+		result = prime * result + ((RMN_SCORE == null) ? 0 : RMN_SCORE.hashCode());
+		result = prime * result + ((RMN_SCORE_PARTIAL == null) ? 0 : RMN_SCORE_PARTIAL.hashCode());
+		result = prime * result + ((SAT_MATH == null) ? 0 : SAT_MATH.hashCode());
+		result = prime * result + ((SAT_VERBAL == null) ? 0 : SAT_VERBAL.hashCode());
+		result = prime * result + ((STANDING == null) ? 0 : STANDING.hashCode());
+		result = prime * result + ((SUBJECT == null) ? 0 : SUBJECT.hashCode());
 		return result;
 	}
 
@@ -419,183 +419,182 @@ public class StudentStatistics implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		StudentStatistics other = (StudentStatistics) obj;
-		if (academic_risk == null) {
-			if (other.academic_risk != null)
+		if (ACADEMIC_RISK == null) {
+			if (other.ACADEMIC_RISK != null)
 				return false;
-		} else if (!academic_risk.equals(other.academic_risk))
+		} else if (!ACADEMIC_RISK.equals(other.ACADEMIC_RISK))
 			return false;
-		if (age == null) {
-			if (other.age != null)
+		if (AGE == null) {
+			if (other.AGE != null)
 				return false;
-		} else if (!age.equals(other.age))
+		} else if (!AGE.equals(other.AGE))
 			return false;
-		if (alternative_id == null) {
-			if (other.alternative_id != null)
+		if (ALTERNATIVE_ID == null) {
+			if (other.ALTERNATIVE_ID != null)
 				return false;
-		} else if (!alternative_id.equals(other.alternative_id))
+		} else if (!ALTERNATIVE_ID.equals(other.ALTERNATIVE_ID))
 			return false;
-		if (aptitude_score == null) {
-			if (other.aptitude_score != null)
+		if (APTITUDE_SCORE == null) {
+			if (other.APTITUDE_SCORE != null)
 				return false;
-		} else if (!aptitude_score.equals(other.aptitude_score))
+		} else if (!APTITUDE_SCORE.equals(other.APTITUDE_SCORE))
 			return false;
-		if (course_id == null) {
-			if (other.course_id != null)
+		if (COURSE_ID == null) {
+			if (other.COURSE_ID != null)
 				return false;
-		} else if (!course_id.equals(other.course_id))
+		} else if (!COURSE_ID.equals(other.COURSE_ID))
 			return false;
-		if (enrollment == null) {
-			if (other.enrollment != null)
+		if (ENROLLMENT == null) {
+			if (other.ENROLLMENT != null)
 				return false;
-		} else if (!enrollment.equals(other.enrollment))
+		} else if (!ENROLLMENT.equals(other.ENROLLMENT))
 			return false;
-		if (fail_probability == null) {
-			if (other.fail_probability != null)
+		if (FAIL_PROBABILITY == null) {
+			if (other.FAIL_PROBABILITY != null)
 				return false;
-		} else if (!fail_probability.equals(other.fail_probability))
+		} else if (!FAIL_PROBABILITY.equals(other.FAIL_PROBABILITY))
 			return false;
-		if (gpa_cumulative == null) {
-			if (other.gpa_cumulative != null)
+		if (GPA_CUMULATIVE == null) {
+			if (other.GPA_CUMULATIVE != null)
 				return false;
-		} else if (!gpa_cumulative.equals(other.gpa_cumulative))
+		} else if (!GPA_CUMULATIVE.equals(other.GPA_CUMULATIVE))
 			return false;
-		if (gpa_semester == null) {
-			if (other.gpa_semester != null)
+		if (GPA_SEMESTER == null) {
+			if (other.GPA_SEMESTER != null)
 				return false;
-		} else if (!gpa_semester.equals(other.gpa_semester))
+		} else if (!GPA_SEMESTER.equals(other.GPA_SEMESTER))
 			return false;
-		if (model_risk_confidence == null) {
-			if (other.model_risk_confidence != null)
+		if (MODEL_RISK_CONFIDENCE == null) {
+			if (other.MODEL_RISK_CONFIDENCE != null)
 				return false;
-		} else if (!model_risk_confidence.equals(other.model_risk_confidence))
+		} else if (!MODEL_RISK_CONFIDENCE.equals(other.MODEL_RISK_CONFIDENCE))
 			return false;
-		if (online_flag == null) {
-			if (other.online_flag != null)
+		if (ONLINE_FLAG == null) {
+			if (other.ONLINE_FLAG != null)
 				return false;
-		} else if (!online_flag.equals(other.online_flag))
+		} else if (!ONLINE_FLAG.equals(other.ONLINE_FLAG))
 			return false;
-		if (pass_probability == null) {
-			if (other.pass_probability != null)
+		if (PASS_PROBABILITY == null) {
+			if (other.PASS_PROBABILITY != null)
 				return false;
-		} else if (!pass_probability.equals(other.pass_probability))
+		} else if (!PASS_PROBABILITY.equals(other.PASS_PROBABILITY))
 			return false;
-		if (percentile == null) {
-			if (other.percentile != null)
+		if (PERCENTILE == null) {
+			if (other.PERCENTILE != null)
 				return false;
-		} else if (!percentile.equals(other.percentile))
+		} else if (!PERCENTILE.equals(other.PERCENTILE))
 			return false;
-		if (r_asn_read == null) {
-			if (other.r_asn_read != null)
+		if (R_ASN_READ == null) {
+			if (other.R_ASN_READ != null)
 				return false;
-		} else if (!r_asn_read.equals(other.r_asn_read))
+		} else if (!R_ASN_READ.equals(other.R_ASN_READ))
 			return false;
-		if (r_asn_sub == null) {
-			if (other.r_asn_sub != null)
+		if (R_ASN_SUB == null) {
+			if (other.R_ASN_SUB != null)
 				return false;
-		} else if (!r_asn_sub.equals(other.r_asn_sub))
+		} else if (!R_ASN_SUB.equals(other.R_ASN_SUB))
 			return false;
-		if (r_assmt_sub == null) {
-			if (other.r_assmt_sub != null)
+		if (R_ASSMT_SUB == null) {
+			if (other.R_ASSMT_SUB != null)
 				return false;
-		} else if (!r_assmt_sub.equals(other.r_assmt_sub))
+		} else if (!R_ASSMT_SUB.equals(other.R_ASSMT_SUB))
 			return false;
-		if (r_assmt_take == null) {
-			if (other.r_assmt_take != null)
+		if (R_ASSMT_TAKE == null) {
+			if (other.R_ASSMT_TAKE != null)
 				return false;
-		} else if (!r_assmt_take.equals(other.r_assmt_take))
+		} else if (!R_ASSMT_TAKE.equals(other.R_ASSMT_TAKE))
 			return false;
-		if (r_content_read == null) {
-			if (other.r_content_read != null)
+		if (R_CONTENT_READ == null) {
+			if (other.R_CONTENT_READ != null)
 				return false;
-		} else if (!r_content_read.equals(other.r_content_read))
+		} else if (!R_CONTENT_READ.equals(other.R_CONTENT_READ))
 			return false;
-		if (r_forum_post == null) {
-			if (other.r_forum_post != null)
+		if (R_FORUM_POST == null) {
+			if (other.R_FORUM_POST != null)
 				return false;
-		} else if (!r_forum_post.equals(other.r_forum_post))
+		} else if (!R_FORUM_POST.equals(other.R_FORUM_POST))
 			return false;
-		if (r_forum_read == null) {
-			if (other.r_forum_read != null)
+		if (R_FORUM_READ == null) {
+			if (other.R_FORUM_READ != null)
 				return false;
-		} else if (!r_forum_read.equals(other.r_forum_read))
+		} else if (!R_FORUM_READ.equals(other.R_FORUM_READ))
 			return false;
-		if (r_lessons_view == null) {
-			if (other.r_lessons_view != null)
+		if (R_LESSONS_VIEW == null) {
+			if (other.R_LESSONS_VIEW != null)
 				return false;
-		} else if (!r_lessons_view.equals(other.r_lessons_view))
+		} else if (!R_LESSONS_VIEW.equals(other.R_LESSONS_VIEW))
 			return false;
-		if (r_sessions == null) {
-			if (other.r_sessions != null)
+		if (R_SESSIONS == null) {
+			if (other.R_SESSIONS != null)
 				return false;
-		} else if (!r_sessions.equals(other.r_sessions))
+		} else if (!R_SESSIONS.equals(other.R_SESSIONS))
 			return false;
-		if (rc_class_code == null) {
-			if (other.rc_class_code != null)
+		if (RC_CLASS_CODE == null) {
+			if (other.RC_CLASS_CODE != null)
 				return false;
-		} else if (!rc_class_code.equals(other.rc_class_code))
+		} else if (!RC_CLASS_CODE.equals(other.RC_CLASS_CODE))
 			return false;
-		if (rc_enrollment_status == null) {
-			if (other.rc_enrollment_status != null)
+		if (RC_ENROLLMENT_STATUS == null) {
+			if (other.RC_ENROLLMENT_STATUS != null)
 				return false;
-		} else if (!rc_enrollment_status.equals(other.rc_enrollment_status))
+		} else if (!RC_ENROLLMENT_STATUS.equals(other.RC_ENROLLMENT_STATUS))
 			return false;
-		if (rc_final_grade == null) {
-			if (other.rc_final_grade != null)
+		if (RC_FINAL_GRADE == null) {
+			if (other.RC_FINAL_GRADE != null)
 				return false;
-		} else if (!rc_final_grade.equals(other.rc_final_grade))
+		} else if (!RC_FINAL_GRADE.equals(other.RC_FINAL_GRADE))
 			return false;
-		if (rc_gender == null) {
-			if (other.rc_gender != null)
+		if (RC_GENDER == null) {
+			if (other.RC_GENDER != null)
 				return false;
-		} else if (!rc_gender.equals(other.rc_gender))
+		} else if (!RC_GENDER.equals(other.RC_GENDER))
 			return false;
-		if (rmn_score == null) {
-			if (other.rmn_score != null)
+		if (RMN_SCORE == null) {
+			if (other.RMN_SCORE != null)
 				return false;
-		} else if (!rmn_score.equals(other.rmn_score))
+		} else if (!RMN_SCORE.equals(other.RMN_SCORE))
 			return false;
-		if (rmn_score_partial == null) {
-			if (other.rmn_score_partial != null)
+		if (RMN_SCORE_PARTIAL == null) {
+			if (other.RMN_SCORE_PARTIAL != null)
 				return false;
-		} else if (!rmn_score_partial.equals(other.rmn_score_partial))
+		} else if (!RMN_SCORE_PARTIAL.equals(other.RMN_SCORE_PARTIAL))
 			return false;
-		if (sat_math == null) {
-			if (other.sat_math != null)
+		if (SAT_MATH == null) {
+			if (other.SAT_MATH != null)
 				return false;
-		} else if (!sat_math.equals(other.sat_math))
+		} else if (!SAT_MATH.equals(other.SAT_MATH))
 			return false;
-		if (sat_verbal == null) {
-			if (other.sat_verbal != null)
+		if (SAT_VERBAL == null) {
+			if (other.SAT_VERBAL != null)
 				return false;
-		} else if (!sat_verbal.equals(other.sat_verbal))
+		} else if (!SAT_VERBAL.equals(other.SAT_VERBAL))
 			return false;
-		if (standing == null) {
-			if (other.standing != null)
+		if (STANDING == null) {
+			if (other.STANDING != null)
 				return false;
-		} else if (!standing.equals(other.standing))
+		} else if (!STANDING.equals(other.STANDING))
 			return false;
-		if (subject == null) {
-			if (other.subject != null)
+		if (SUBJECT == null) {
+			if (other.SUBJECT != null)
 				return false;
-		} else if (!subject.equals(other.subject))
+		} else if (!SUBJECT.equals(other.SUBJECT))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "StudentStatistics [alternative_id=" + alternative_id + ", course_id=" + course_id + ", subject="
-				+ subject + ", online_flag=" + online_flag + ", enrollment=" + enrollment + ", rc_final_grade="
-				+ rc_final_grade + ", percentile=" + percentile + ", sat_verbal=" + sat_verbal + ", sat_math="
-				+ sat_math + ", aptitude_score=" + aptitude_score + ", age=" + age + ", rc_gender=" + rc_gender
-				+ ", rc_enrollment_status=" + rc_enrollment_status + ", rc_class_code=" + rc_class_code
-				+ ", gpa_cumulative=" + gpa_cumulative + ", gpa_semester=" + gpa_semester + ", standing=" + standing
-				+ ", rmn_score=" + rmn_score + ", rmn_score_partial=" + rmn_score_partial + ", r_content_read="
-				+ r_content_read + ", r_assmt_sub=" + r_assmt_sub + ", r_forum_post=" + r_forum_post + ", r_forum_read="
-				+ r_forum_read + ", r_lessons_view=" + r_lessons_view + ", r_assmt_take=" + r_assmt_take
-				+ ", r_asn_sub=" + r_asn_sub + ", r_asn_read=" + r_asn_read + ", r_sessions=" + r_sessions
-				+ ", academic_risk=" + academic_risk + ", fail_probability=" + fail_probability + ", pass_probability="
-				+ pass_probability + ", model_risk_confidence=" + model_risk_confidence + "]";
+		return "StudentStatistics [ALTERNATIVE_ID=" + ALTERNATIVE_ID + ", COURSE_ID=" + COURSE_ID + ", SUBJECT="
+				+ SUBJECT + ", ONLINE_FLAG=" + ONLINE_FLAG + ", ENROLLMENT=" + ENROLLMENT + ", RC_FINAL_GRADE="
+				+ RC_FINAL_GRADE + ", PERCENTILE=" + PERCENTILE + ", SAT_VERBAL=" + SAT_VERBAL + ", SAT_MATH="
+				+ SAT_MATH + ", APTITUDE_SCORE=" + APTITUDE_SCORE + ", AGE=" + AGE + ", RC_GENDER=" + RC_GENDER
+				+ ", RC_ENROLLMENT_STATUS=" + RC_ENROLLMENT_STATUS + ", RC_CLASS_CODE=" + RC_CLASS_CODE
+				+ ", GPA_CUMULATIVE=" + GPA_CUMULATIVE + ", GPA_SEMESTER=" + GPA_SEMESTER + ", STANDING=" + STANDING
+				+ ", RMN_SCORE=" + RMN_SCORE + ", RMN_SCORE_PARTIAL=" + RMN_SCORE_PARTIAL + ", R_CONTENT_READ="
+				+ R_CONTENT_READ + ", R_ASSMT_SUB=" + R_ASSMT_SUB + ", R_FORUM_POST=" + R_FORUM_POST + ", R_FORUM_READ="
+				+ R_FORUM_READ + ", R_LESSONS_VIEW=" + R_LESSONS_VIEW + ", R_ASSMT_TAKE=" + R_ASSMT_TAKE
+				+ ", R_ASN_SUB=" + R_ASN_SUB + ", R_ASN_READ=" + R_ASN_READ + ", R_SESSIONS=" + R_SESSIONS
+				+ ", ACADEMIC_RISK=" + ACADEMIC_RISK + ", FAIL_PROBABILITY=" + FAIL_PROBABILITY + ", PASS_PROBABILITY="
+				+ PASS_PROBABILITY + ", MODEL_RISK_CONFIDENCE=" + MODEL_RISK_CONFIDENCE + "]";
 	}
-	
 }
