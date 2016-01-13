@@ -37,8 +37,10 @@ public class RadarController extends HibernateUtil {
 	}
 	
 	static{
-		s1 = new StudentStatistics("STUDENT12", "MNG_333N_222_08F", "Management", 22, 2, 4, 97.9625, 1.5, 0.5, 1, 2.948312, "NO RISK");
-		s2 = new StudentStatistics("STUDENT13", "MNG_333N_222_08F", "Management", 22, 2, 3.8729, 25, 1.71056, 0.5, 2.5, 2.00949, "NO RISK");
+		//s1 = new StudentStatistics("STUDENT12", "MNG_333N_222_08F", "Management", 22, 2, 4, 97.9625, 1.5, 0.5, 1, 2.948312, "NO RISK");
+		//s2 = new StudentStatistics("STUDENT13", "MNG_333N_222_08F", "Management", 22, 2, 3.8729, 25, 1.71056, 0.5, 2.5, 2.00949, "NO RISK");
+		s1 = new StudentStatistics();
+		s2 = new StudentStatistics();
 		save(s1);
 		save(s2);
 		
