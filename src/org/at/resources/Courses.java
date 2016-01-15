@@ -22,7 +22,7 @@ public enum Courses {
 	ANTH ("ANTH 413"),
 	FASH ("FASH 321");
 
-	private String subject;
+	public String subject;
 
 	Courses(String subject) {
 		this.subject = subject;

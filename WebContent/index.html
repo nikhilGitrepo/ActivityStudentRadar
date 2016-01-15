@@ -28,20 +28,26 @@
 		<h2>Learning Activity Radar</h2>
 		<div class="row">
 			&nbsp;&nbsp;&nbsp;&nbsp; 
+			
 			<label>Select Course:&nbsp;&nbsp; </label>
-			<select  class="input" id="courseList"></select>
-			&nbsp;&nbsp;&nbsp;&nbsp; 
+			<select  class="input" id="courseList">
+				<option selected="selected" value="-1"> All Courses </option>
+			</select>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			 
 			<label>Select Risk Category :&nbsp;&nbsp; </label> 
 			<select class="input" id="riskCategoryList">
-				<option value="">All Risk Categories</option>
-				<option value="NO RISK">No Risk</option>
-				<option value="LOW RISK">Low Risk</option>
-				<option value="MEDIUM RISK">Medium Risk</option>
-				<option value="HIGH RISK">High Risk</option>
+				<option selected="selected" value="-1">All Risk Categories</option>
 			</select>
+			
 			&nbsp;&nbsp;&nbsp;&nbsp; 
+			
 			<label>Select Student:&nbsp;&nbsp; </label>
-			<select class="input" id="studentList"></select>
+			<select class="input" id="studentList">
+				<option selected="selected" value="0"> All Students </option>
+			</select>
+		
 		</div>
 	</div>			
 		

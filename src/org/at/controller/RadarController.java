@@ -53,26 +53,30 @@ public class RadarController{
 	@RequestMapping(value = "/activity/loadAllCourses",
 			method = RequestMethod.GET,
 			produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Collection<String>> loadAllCourses(){
+	public ResponseEntity<Map<String,String>> loadAllCourses(){
 		
-		LOGGER.info("Courses Offered In College are : " + Courses.values());
+		LOGGER.debug("Courses Offered In College are : " + Courses.values());
 		
-		List<String> courses = new ArrayList<>();
+		Map<String,String> courses = new HashMap<>();
 		for(Courses c : Courses.values())
-			courses.add(c.name() + ":" + Courses.valueOf(c.name()));
+			courses.put(c.name(),c.subject);
 		
-		Collection<String> coursesCollection = courses;
-		
-		return new ResponseEntity<Collection<String>>( coursesCollection, HttpStatus.OK);
+		return new ResponseEntity<Map<String,String>>( courses, HttpStatus.OK);
 	
 	}
 	
 	@RequestMapping(value = "/activity/loadRisks",
 			method = RequestMethod.GET,
 			produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<RiskCategory[]> loadRisks(){
+	public ResponseEntity<Map<String,String>> loadRisks(){
 	
-		return new ResponseEntity<RiskCategory[]>(RiskCategory.values(), HttpStatus.OK);
+		LOGGER.debug("Risk types : " + RiskCategory.values());
+		
+		Map<String,String> risks = new HashMap<>();
+		for(RiskCategory r : RiskCategory.values())
+			risks.put(r.name(),r.risk);
+		
+		return new ResponseEntity<Map<String,String>>( risks, HttpStatus.OK);
 	
 	}
 	
