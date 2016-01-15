@@ -7,7 +7,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.at.pojo.StudentStatistics;
+import org.at.model.StudentStatistics;
+import org.at.model.StudentStatsStub;
+import org.at.resources.Courses;
+import org.at.resources.RiskCategory;
 import org.at.service.ActivityRadarDao;
 import org.at.util.HibernateUtil;
 import org.hibernate.Criteria;
@@ -38,13 +41,39 @@ public class RadarController{
 		List<StudentStatistics> statsList = new ArrayList<StudentStatistics>();
 		
 		statsList = activityRadar.getAllStudentStats();
-		
+
 		Collection<StudentStatistics> statistics = statsList;
 		
-		LOGGER.info("*****Student Statistics are ***** : " + statistics);
+		LOGGER.info("Student Statistics are : " + statistics);
 		
 		return new ResponseEntity<Collection<StudentStatistics>>(statistics, HttpStatus.OK);
 		
+	}
+	
+	@RequestMapping(value = "/activity/loadAllCourses",
+			method = RequestMethod.GET,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Collection<String>> loadAllCourses(){
+		
+		LOGGER.info("Courses Offered In College are : " + Courses.values());
+		
+		List<String> courses = new ArrayList<>();
+		for(Courses c : Courses.values())
+			courses.add(c.name() + ":" + Courses.valueOf(c.name()));
+		
+		Collection<String> coursesCollection = courses;
+		
+		return new ResponseEntity<Collection<String>>( coursesCollection, HttpStatus.OK);
+	
+	}
+	
+	@RequestMapping(value = "/activity/loadRisks",
+			method = RequestMethod.GET,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<RiskCategory[]> loadRisks(){
+	
+		return new ResponseEntity<RiskCategory[]>(RiskCategory.values(), HttpStatus.OK);
+	
 	}
 	
 }

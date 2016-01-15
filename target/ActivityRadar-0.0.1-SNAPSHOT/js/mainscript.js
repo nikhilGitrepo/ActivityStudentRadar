@@ -6,7 +6,7 @@ function updateDropdownList(filteredData)
     var studentOptions='<option value=""> All Students </option>';
     filteredData.forEach(function(d) 
     {   
-          studentOptions += '<option value="'+d.alternative_ID+'">'+d.alternative_ID+'</option>';
+          studentOptions += '<option value="'+d.ALTERNATIVE_ID+'">'+d.ALTERNATIVE_ID+'</option>';
     });
     return (studentOptions);
 }
@@ -14,9 +14,9 @@ function updateDropdownList(filteredData)
 // benchMarkData is added and drawn on the selection of a particular student or 
 // on selection of a particular category  	
 var benchMarkData = {
-		"alternative_ID" : "Class Benchmark Performance",
-		"course_ID" : "Bench_Mark",
-		"subject" : "Bench_Mark",
+		"ALTERNATIVE_ID" : "Class Benchmark Performance",
+		"COURSE_ID" : "Bench_Mark",
+		"SUBJECT" : "Bench_Mark",
 		"ONLINE_FLAG" : "1",
 		"ENROLLMENT" : 29,
 		"RC_FINAL_GRADE" : 4,
@@ -24,8 +24,8 @@ var benchMarkData = {
 		"SAT_VERBAL" : 460,
 		"SAT_MATH" : 480,
 		"APTITUDE_SCORE" : 940,
-		"age" : 22,
-		"rc_GENDER" : 2,
+		"AGE" : 22,
+		"RC_GENDER" : 2,
 		"RC_ENROLLMENT_STATUS" : "1",
 		"RC_CLASS_CODE" : "5",
 		"GPA_CUMULATIVE" : 3,
@@ -45,7 +45,7 @@ var benchMarkData = {
 		"ACADEMIC_RISK" : "1",
 		"FAIL_PROBABILITY" : 0.054521,
 		"PASS_PROBABILITY" : 0.945479,
-		"model_RISK_CONFIDENCE" : "BENCHMARK"
+		"MODEL_RISK_CONFIDENCE" : "BENCHMARK"
 	};
 
 function colorIndicator(field, value)
@@ -79,8 +79,8 @@ function updateData(data)
 
             // NOTE: This could be temporary as the logic to get back the original student id is to be defined here
             // Replace the managled student id and course id with some other id
-            d.alternative_ID = "Student" + count;
-            d.course_ID = subjectToCourseId[d.subject];
+            d.ALTERNATIVE_ID = "Student" + count;
+            d.COURSE_ID = subjectToCourseId[d.SUBJECT];
         
             // Increment the count for the next student
             count++;           
@@ -90,8 +90,9 @@ function updateData(data)
 }
 
 var courseData=[];
+
+//d3.json("resources/sample.json", function(error, data)
 d3.json("http://localhost:8080/activity/getAllStudentStats/", function(error, data)
-//d3.json("resources/sample.json", function(error, data) 
 {	  
 
   console.log(data)
@@ -105,7 +106,7 @@ d3.json("http://localhost:8080/activity/getAllStudentStats/", function(error, da
         {          
           courseData = data.filter(function (el) 
           {
-                return el.course_ID == selectedCourse;
+                return el.COURSE_ID == selectedCourse;
           });
         }
         $("#studentList").html(updateDropdownList(courseData));
@@ -136,11 +137,11 @@ d3.json("http://localhost:8080/activity/getAllStudentStats/", function(error, da
 	var uniqueCourseList = [];
 	data.forEach(function(d) 
 	{
-	 //studentOptions += '<option value="'+d.alternative_ID+'">'+d.alternative_ID+'</option>';
-    if($.inArray(d.course_ID,uniqueCourseList)==-1)
+	 //studentOptions += '<option value="'+d.ALTERNATIVE_ID+'">'+d.ALTERNATIVE_ID+'</option>';
+    if($.inArray(d.COURSE_ID,uniqueCourseList)==-1)
     {
-      courseOptions += '<option value="'+d.course_ID+'">'+d.course_ID+'</option>';	
-      uniqueCourseList.push(d.course_ID) 
+      courseOptions += '<option value="'+d.COURSE_ID+'">'+d.COURSE_ID+'</option>';	
+      uniqueCourseList.push(d.COURSE_ID) 
     }
 	});   
 	$("#studentList").html(studentOptions);
@@ -157,7 +158,7 @@ d3.json("http://localhost:8080/activity/getAllStudentStats/", function(error, da
 	      {
           filteredData = courseData.filter(function (el) 
           {
-                return el.model_RISK_CONFIDENCE == selectedCategory;
+                return el.MODEL_RISK_CONFIDENCE == selectedCategory;
           });
 	      }
 	      else 
@@ -244,16 +245,16 @@ d3.json("http://localhost:8080/activity/getAllStudentStats/", function(error, da
         {
             filteredData = courseData.filter(function (el) 
             {
-                  return el.alternative_ID == selectedStudent;
+                  return el.ALTERNATIVE_ID == selectedStudent;
             });
             
             // Generate the proper HTML code to display the profile table
             var tableData = "<tr><td colspan='2'>Profile</td></tr>";
-            var displayFields = {"alternative_ID":"Student Id" , "rc_GENDER":"Gender" ,"age":"Age", "course_ID" :"Course Id","subject" :"Subject", "model_RISK_CONFIDENCE":"Risk Level"};
+            var displayFields = {"ALTERNATIVE_ID":"Student Id" , "RC_GENDER":"Gender" ,"AGE":"Age", "COURSE_ID" :"Course Id","SUBJECT" :"Subject", "MODEL_RISK_CONFIDENCE":"Risk Level"};
             for(var key in displayFields) 
             {
                 tableData += "<tr><td>"+displayFields[key]+"</td><td>";
-                if(key == "rc_GENDER")
+                if(key == "RC_GENDER")
                 {
                     // The in-coming data has digits to specify the gender ( 1 value for female and 2 value for male ) 
                     // so map the value to the respective gender
@@ -290,7 +291,7 @@ d3.json("http://localhost:8080/activity/getAllStudentStats/", function(error, da
           {
               filteredData = courseData.filter(function (el) 
               {
-                    return el.model_RISK_CONFIDENCE == selectedCategory;
+                    return el.MODEL_RISK_CONFIDENCE == selectedCategory;
               });
           }
           else

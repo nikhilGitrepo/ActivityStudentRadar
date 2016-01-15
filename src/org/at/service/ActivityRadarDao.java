@@ -2,7 +2,7 @@ package org.at.service;
 
 import java.util.List;
 
-import org.at.pojo.StudentStatistics;
+import org.at.model.StudentStatistics;
 
 public interface ActivityRadarDao {
 	

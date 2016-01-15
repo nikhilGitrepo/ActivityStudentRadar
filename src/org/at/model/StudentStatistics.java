@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.at.pojo;
+package org.at.model;
 
 import java.io.Serializable;
 
@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * @author Nikhil
@@ -28,37 +30,100 @@ public class StudentStatistics implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
+	@JsonProperty("ALTERNATIVE_ID")
 	private String ALTERNATIVE_ID;
+	
+	@JsonProperty("COURSE_ID")
 	private String COURSE_ID;
+	
+	@JsonProperty("SUBJECT")
 	private String SUBJECT;
+
+	@JsonProperty("ONLINE_FLAG")
 	private String ONLINE_FLAG;
+	
+	@JsonProperty("ENROLLMENT")
 	private String ENROLLMENT;
+	
+	@JsonProperty("RC_FINAL_GRADE")
 	private Double RC_FINAL_GRADE;
+	
+	@JsonProperty("PERCENTILE")
 	private Integer PERCENTILE;
+	
+	@JsonProperty("SAT_VERBAL")
 	private Integer SAT_VERBAL;
+	
+	@JsonProperty("SAT_MATH")
 	private Integer SAT_MATH;
+	
+	@JsonProperty("APTITUDE_SCORE")
 	private Integer APTITUDE_SCORE;
+	
+	@JsonProperty("AGE")
 	private Integer AGE;
+	
+	@JsonProperty("RC_GENDER")
 	private Integer RC_GENDER;
+	
+	@JsonProperty("RC_ENROLLMENT_STATUS")
 	private String RC_ENROLLMENT_STATUS;
+	
+	@JsonProperty("RC_CLASS_CODE")
 	private String RC_CLASS_CODE;
+	
+	@JsonProperty("GPA_CUMULATIVE")
 	private Double GPA_CUMULATIVE;
+	
+	@JsonProperty("GPA_SEMESTER")
 	private Double GPA_SEMESTER;
+	
+	@JsonProperty("STANDING")
 	private String STANDING;
+	
+	@JsonProperty("RMN_SCORE")
 	private Double RMN_SCORE;
+	
+	@JsonProperty("RMN_SCORE_PARTIAL")
 	private Double RMN_SCORE_PARTIAL;
+	
+	@JsonProperty("R_CONTENT_READ")
 	private Double R_CONTENT_READ;
+	
+	@JsonProperty("R_ASSMT_SUB")
 	private String R_ASSMT_SUB;
+	
+	@JsonProperty("R_FORUM_POST")
 	private Double R_FORUM_POST;
+	
+	@JsonProperty("R_FORUM_READ")
 	private Double R_FORUM_READ;
+	
+	@JsonProperty("R_LESSONS_VIEW")
 	private Double R_LESSONS_VIEW;
+	
+	@JsonProperty("R_ASSMT_TAKE")
 	private Double R_ASSMT_TAKE;
+	
+	@JsonProperty("R_ASN_SUB")
 	private Double R_ASN_SUB;
+	
+	@JsonProperty("R_ASN_READ")
 	private Double R_ASN_READ;
+	
+	@JsonProperty("R_SESSIONS")
 	private Double R_SESSIONS;
+	
+	@JsonProperty("ACADEMIC_RISK")
 	private String ACADEMIC_RISK;
+	
+	@JsonProperty("FAIL_PROBABILITY")
 	private Double FAIL_PROBABILITY;
+	
+	@JsonProperty("PASS_PROBABILITY")
 	private Double PASS_PROBABILITY;
+	
+	@JsonProperty("MODEL_RISK_CONFIDENCE")
 	private String MODEL_RISK_CONFIDENCE;
 	
 	public StudentStatistics() {
