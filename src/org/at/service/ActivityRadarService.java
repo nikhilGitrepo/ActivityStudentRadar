@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.at.controller.RadarController;
-import org.at.pojo.StudentStatistics;
+import org.at.model.StudentStatistics;
 import org.at.transaction.ActivityRadarTransactionDao;
 import org.at.util.HibernateUtil;
 import org.springframework.beans.factory.annotation.Autowired;

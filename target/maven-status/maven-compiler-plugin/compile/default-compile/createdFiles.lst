@@ -1,9 +1,12 @@
-org\at\service\ActivityRadarDao.class
-org\at\pojo\StudentStatistics.class
+org\at\resources\RiskCategory.class
+org\at\resources\Courses.class
 org\at\config\HibernateConfiguration.class
-org\at\service\ActivityRadarService.class
 org\at\Application.class
-org\at\transaction\ActivityRadarTransaction.class
 org\at\util\HibernateUtil.class
 org\at\controller\RadarController.class
 org\at\transaction\ActivityRadarTransactionDao.class
+org\at\service\ActivityRadarDao.class
+org\at\model\StudentStatistics.class
+org\at\model\StudentStatsStub.class
+org\at\service\ActivityRadarService.class
+org\at\transaction\ActivityRadarTransaction.class

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.at.pojo.StudentStatistics;
+import org.at.model.StudentStatistics;
 import org.at.service.ActivityRadarService;
 import org.at.util.HibernateUtil;
 import org.hibernate.Query;
