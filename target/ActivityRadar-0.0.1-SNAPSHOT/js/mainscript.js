@@ -64,10 +64,13 @@ function colorIndicator(field, value)
 var subjectToCourseId;
 
 d3.json("http://localhost:8080/activity/loadAllCourses/",function(error,data){
-	
 	subjectToCourseId = data;
-	console.log(data);
-	
+});
+
+var rickCategories;
+
+d3.json("http://localhost:8080/activity/loadRisks/",function(error,data){
+	rickCategories = data;
 });
 
  
@@ -102,7 +105,6 @@ var courseData=[];
 d3.json("http://localhost:8080/activity/getAllStudentStats/", function(error, data)
 {	  
 
-  console.log(data)
   var selectedCourse="";
   $('#courseList').change( function()
       {
